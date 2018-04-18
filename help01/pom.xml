@@ -4,10 +4,21 @@
   <groupId>Help</groupId>
   <artifactId>help01</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>help01 Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  
+  <distributionManagement>
+  	<repository>
+  		<id>nexus-releases</id>
+		<name>Nexus Releases Repository</name>
+		<url>http://192.168.28.33:8081/nexus/content/repositories/releases/</url>
+  	</repository>
+  	<!-- <snapshotRepository>
+  		<id>nexus-snapshots</id>
+		<name>Nexus Snapshots Repository</name>
+		<url>http://192.168.28.33:8081/nexus/content/repositories/snapshots</url>
+  	</snapshotRepository> -->
+  </distributionManagement>
   <repositories>
     <repository>
       <id>central</id>
@@ -85,7 +96,6 @@
     <!-- NOTE: The release profile will be removed from future versions of the super POM -->
     <profile>
       <id>release-profile</id>
-
       <activation>
         <property>
           <name>performRelease</name>
